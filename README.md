@@ -6,8 +6,5 @@ Web based movies app **(Netflix Clone)**. 🎥
 - React.js ✨
 - Sass 🟣
 
-### Database
-- MongoDB 🍃
-
 ### API 🔗
 - TMDB 🎬

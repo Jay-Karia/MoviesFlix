@@ -1,10 +1,11 @@
-# React + Vite
+# Movies Flix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Web based movie browsing app (Netflix Clone). 🎥
 
 ## Tech Stack 🥪
 ### Frontend 👁‍🗨
 - React.js ✨
+- Material UI 🌟
 - Sass 🟣
 
 ### API 🔗

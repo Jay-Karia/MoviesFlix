@@ -11,7 +11,7 @@ A Web based movie browsing app (Netflix Clone). 🎥
 ### API 🔗
 - TMDB 🎬
 
-### Features 🚀
+## Features 🚀
 - Browse Movies / TV Shows 🎬
 - Trending Movies/ TV Shows 📈
 - Popular Movies/ TV Shows 🥤

@@ -19,3 +19,5 @@ A Web based movie browsing app (Netflix Clone). 🎥
 - Search 🔍
 - Watch Trailers 📷
 - Cast 🤵
+
+⚠ : <b style="color:hsl(45, 90%, 40%)">Currently in Development</b>

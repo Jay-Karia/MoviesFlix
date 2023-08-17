@@ -20,4 +20,6 @@ A Web based movie browsing app (Netflix Clone). 🎥
 - Watch Trailers 📷
 - Cast 🤵
 
+<div style="padding:10px; background:hsl(35, 40%, 20%);border-radius:10px;">
 ⚠ : <b style="color:hsl(45, 90%, 40%)">Currently in Development</b>
+</div>

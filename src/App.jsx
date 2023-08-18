@@ -1,12 +1,13 @@
 import * as React from 'react'
-import { useState } from 'react'
 
-import Navbar from './Components/Navbar'
+import HomeScreen from "./Components/HomeScreen/HomeScreen"
 
 function App() {
   return (
     <>
-      
+      <div className="app">
+        <HomeScreen/>
+      </div>
     </>
   )
 }

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap');
+.banner {
+    background-color: black;
+    color: white;
+    font-family: rubik;
+}
+
+.banner-content {
+    padding-top: 150px;
+    padding-left: 20px;
+    width: 30%;
+}
+
+.header {
+    font-size: 20px;
+}
+
+.buttons {
+    padding: 20px 0 20px 0;
+    display: flex;
+    margin: 20px 0 20px 0;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 0.2vw;
+    background-color: hsl(0, 0%, 50%);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin-right: 1rem;
+    color: white;
+    transition: all 0.3s ease-in;
+}
+
+.btn:hover {
+    transition: all 0.3s ease-in;
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+}
+
+.btn-1 {
+    margin-right: 10px;
+}
+
+.description {
+    padding-bottom: 50px;
+}
+
+.fade {
+    margin-left: 0;
+    height: 8rem;
+    background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), black);
+}

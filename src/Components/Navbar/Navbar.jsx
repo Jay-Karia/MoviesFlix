@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <div className={`navbar ${!show ?'navbar-black': ''}`}>
       <div className="nav-contents">
-        <img className="logo" src="/public/logo2.png" alt="logo" />
+        <img className="logo" src="/public/netflix.png" alt="logo" />
         <img className="avatar" src="/public/profile.png" alt="avatar" />
       </div>
     </div>

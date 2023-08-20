@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import './Banner.css'
+import requests from "../api/requests"
+import axios from "axios"
 
 const Banner = () => {
+
+  const [movie, setMovie] = useState("")
 
     const trim = (description, max)=> {
         if (description.length > max) {
@@ -11,6 +15,17 @@ const Banner = () => {
             return description
         }
     }
+
+    const fetchBannerMovie = async()=> {
+      // const request = await axios.get(requests.fetchPopular) // popular movie
+      // setMovie(request.data.results)
+      // return request
+    }
+
+    useEffect(() => {
+      // return fetchBannerMovie()
+    })
+    
 
   return (
     <>

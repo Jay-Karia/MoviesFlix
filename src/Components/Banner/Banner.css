@@ -4,12 +4,12 @@
     color: white;
     font-family: rubik;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center center;
+    height: 35rem;
 }
 
 .banner-content {
-    width: 30%;
+    /* width: 30%; */
     padding-top: 150px;
     padding-left: 20px;
 }
@@ -50,11 +50,12 @@
 
 .description {
     padding-bottom: 50px;
+    width: 30%;
 }
 
 .fade {
     margin-left: 0;
-    height: 8rem;
+    height: 9rem;
     background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), black);
 }
 
@@ -67,10 +68,15 @@
 
 .right {
     flex: 5%;
-    height: 20rem;
+    height: 25rem;
     width: 2%;
     background-color: rgba(0, 0, 0, 70%);
     position: relative;
     float: right;
     border: 2px solid white;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }

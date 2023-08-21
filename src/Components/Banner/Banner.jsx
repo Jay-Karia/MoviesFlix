@@ -4,13 +4,8 @@ import './Banner.css'
 import requests from '../api/requests'
 import axios from 'axios'
 
-import Movie1 from './movie1.jpg'
-import Movie2 from './movie2.jpg'
-import Movie3 from './movie3.jpg'
-
 const Banner = () => {
   const [movies, setMovies] = useState([])
-  const [images, setImages] = useState([Movie1, Movie2, Movie3])
   const [index, setIndex] = useState(0)
 
   const trim = (description, max) => {
@@ -22,7 +17,8 @@ const Banner = () => {
   }
 
   const update = (max) => {
-    if (index + 1 > max) {
+    max--;
+    if (index >= max) {
       setIndex(0)
     } else {
       setIndex(index + 1)
@@ -37,21 +33,28 @@ const Banner = () => {
         arr.push(request.data.results[i])
       }
       setMovies(arr)
-      console.log(movies)
       return request
     }
-    // fetchPopular()
-  })
+    fetchPopular()
+  }, [])
 
   return (
     <>
-      <div
+      <header
         className="banner"
-        style={{ backgroundImage: `url(${images[index]})` }}
+        style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${movies[index].backdrop_path})` }}
       >
         <div className="banner-content">
+          <div
+            className="right"
+            onClick={() => {
+              update(5)
+            }}
+          >
+            {'>'}
+          </div>
           <div className="header">
-            <h1>Movie Name</h1>
+            <h1>{movies[index].original_title}</h1>
           </div>
           <div className="buttons">
             <button className="btn btn-1">
@@ -62,25 +65,10 @@ const Banner = () => {
               <b>My List</b>
             </button>
           </div>
-          <div className="description">
-            {trim(
-              'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam suscipit minima natus accusantium velminus facere corrupti iusto voluptatibus non quidem. Optio, impedit asperiores!',
-              150,
-            )}
-          </div>
+          <div className="description">{trim(movies[index].overview, 200)}</div>
         </div>
-        {/* <div className="carousel"> */}
-          <div
-            className="right"
-            onClick={() => {
-              update(2)
-            }}
-          >
-            next
-          </div>
-        {/* </div> */}
         <div className="fade"></div>
-      </div>
+      </header>
     </>
   )
 }

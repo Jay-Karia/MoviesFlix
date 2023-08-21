@@ -3,12 +3,15 @@
     background-color: black;
     color: white;
     font-family: rubik;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .banner-content {
+    width: 30%;
     padding-top: 150px;
     padding-left: 20px;
-    width: 30%;
 }
 
 .header {
@@ -53,4 +56,21 @@
     margin-left: 0;
     height: 8rem;
     background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), black);
+}
+
+.carousel {
+    width: 100%;
+    height: 200px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 70%);
+}
+
+.right {
+    flex: 5%;
+    height: 20rem;
+    width: 2%;
+    background-color: rgba(0, 0, 0, 70%);
+    position: relative;
+    float: right;
+    border: 2px solid white;
 }

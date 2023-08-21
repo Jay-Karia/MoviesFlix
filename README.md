@@ -6,7 +6,6 @@ A Web based movie browsing app (Netflix Clone). 🎥
 ### Frontend 👁‍🗨
 - React.js ✨
 - Material UI 🌟
-- Sass 🟣
 
 ### API 🔗
 - TMDB 🎬

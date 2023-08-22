@@ -1,54 +1,105 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import './Banner.css'
-import requests from "../api/requests"
-import axios from "axios"
+import requests from '../api/requests'
+import axios from 'axios'
+
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import Skeleton from '@mui/material/Skeleton'
+import Slide from '@mui/material/Slide'
+import Button from '@mui/material/Button'
 
 const Banner = () => {
+  const [movies, setMovies] = useState([])
+  const [index, setIndex] = useState(0)
+  const [checked, setChecked] = React.useState(false)
+  const containerRef = React.useRef(null)
 
-  const [movie, setMovie] = useState("")
-
-    const trim = (description, max)=> {
-        if (description.length > max) {
-            return description.substring(0, max) + '...';
-        } else {
-            return description
-        }
+  const trim = (description, max) => {
+    if (description.length > max) {
+      return description.substring(0, max) + '...'
+    } else {
+      return description
     }
+  }
 
-    const fetchBannerMovie = async()=> {
-      // const request = await axios.get(requests.fetchPopular) // popular movie
-      // setMovie(request.data.results)
-      // return request
+  const update = (max) => {
+    max--
+    setChecked(true)
+    if (index >= max) {
+      setIndex(0)
+    } else {
+      setIndex(index + 1)
     }
+  }
 
-    useEffect(() => {
-      // return fetchBannerMovie()
-    })
-    
+  useEffect(() => {
+    const fetchPopular = async () => {
+      const request = await axios.get(requests.fetchPopular) // popular movie
+      let arr = []
+      let p = 0
+      for (let i = 0; i < request.data.results.length; i++) {
+        let num = Math.floor(Math.random() * request.data.results.length)
+        arr.push(request.data.results[num])
+      }
+      setMovies(arr)
+      return request
+    }
+    fetchPopular()
+  }, [])
 
   return (
     <>
-      <div className="banner">
-        <div className="banner-content">
-          <div className="header">
-            <h1>Movie Name</h1>
-          </div>
-          <div className="buttons">
-            <button className="btn btn-1">
-              <b>Play</b>
-            </button>
+      {movies.length > 0 ? (
+        <header
+          className="banner"
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/original/${movies[index].backdrop_path})`,
+            backgroundPosition: 'center center',
+            backgroundSize: '100% 100%',
+          }}
+        >
+          <div className="banner-content">
+            <div className="header">
+              <h1>{movies[index].title}</h1>
+            </div>
+            <div className="buttons">
+              <button className="btn btn-1">
+                <b>Play</b>
+              </button>
 
-            <button className="btn btn-2">
-              <b>My List</b>
-            </button>
+              <button className="btn btn-2">
+                <b>My List</b>
+              </button>
+            </div>
+            <div className="description">
+              {trim(movies[index].overview, 200)}
+            </div>
           </div>
-          <div className="description">
-            {trim("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam suscipit minima natus accusantium velminus facere corrupti iusto voluptatibus non quidem. Optio, impedit asperiores!", 150)}
-          </div>
-        </div>
-        <div className="fade"></div>
-      </div>
+          <Button
+            variant="contained"
+            className={'right'}
+            onClick={() => {
+              update(20)
+            }}
+            style={{ background: 'rgba(0, 0, 0, 70%)' }}
+          >
+            <ArrowForwardIosIcon />
+          </Button>
+          <div className="fade"></div>
+        </header>
+      ) : (
+        <>
+          {/* Skeleton */}
+          <Skeleton
+            sx={{ bgcolor: 'grey.900' }}
+            variant="rectangular"
+            width={210}
+            height={118}
+            style={{ height: '35rem', width: '100%' }}
+          />
+        </>
+      )}
     </>
   )
 }

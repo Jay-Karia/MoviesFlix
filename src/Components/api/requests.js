@@ -1,3 +1,5 @@
+const API_KEY = "5fc38b05bb7dc971aa7e587063d39302"
+
 const requests = {
     fetchTrending: `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`,
     fetchPopular: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US`,

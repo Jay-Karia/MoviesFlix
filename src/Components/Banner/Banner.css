@@ -50,6 +50,7 @@
     padding-bottom: 50px;
     width: 50%;
     height: 5rem;
+    text-shadow: 4px 2px 3px black;
 }
 
 .fade {
@@ -62,14 +63,23 @@
     height: 25rem;
     width: 3rem;
     background-color: rgba(0, 0, 0, 70%);
-    position: relative;
-    float: right;
-    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: relative;
+    float: right;
+    transition: all 0.2s ease-in;
+    bottom: 350px;
 }
+
+.right:hover {
+    box-shadow: 0 0 2px 2px grey;
+    transition: all 0.2s ease-in;
+}
+
+
+/* responsive media query */
 
 @media only screen and (max-width: 459px) {
     .description {

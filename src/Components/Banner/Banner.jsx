@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import './Banner.css'
 import requests from '../api/requests'
@@ -6,11 +6,14 @@ import axios from 'axios'
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import Skeleton from '@mui/material/Skeleton'
-import Box from '@mui/material/Box'
+import Slide from '@mui/material/Slide'
+import Button from '@mui/material/Button'
 
 const Banner = () => {
   const [movies, setMovies] = useState([])
   const [index, setIndex] = useState(0)
+  const [checked, setChecked] = React.useState(false)
+  const containerRef = React.useRef(null)
 
   const trim = (description, max) => {
     if (description.length > max) {
@@ -22,6 +25,7 @@ const Banner = () => {
 
   const update = (max) => {
     max--
+    setChecked(true)
     if (index >= max) {
       setIndex(0)
     } else {
@@ -56,14 +60,6 @@ const Banner = () => {
           }}
         >
           <div className="banner-content">
-            <div
-              className="right"
-              onClick={() => {
-                update(5)
-              }}
-            >
-              <ArrowForwardIosIcon />
-            </div>
             <div className="header">
               <h1>{movies[index].original_title}</h1>
             </div>
@@ -80,18 +76,28 @@ const Banner = () => {
               {trim(movies[index].overview, 200)}
             </div>
           </div>
+          <Button
+              variant="contained"
+              className={'right'}
+              onClick={() => {
+                update(5)
+              }}
+              style={{  background:"rgba(0, 0, 0, 70%)" }}
+            >
+              <ArrowForwardIosIcon />
+            </Button>
           <div className="fade"></div>
         </header>
       ) : (
         <>
           {/* Skeleton */}
-            <Skeleton
-              sx={{ bgcolor: 'grey.900' }}
-              variant="rectangular"
-              width={210}
-              height={118}
-              style={{height:"35rem", width:"100%"}}
-            />
+          <Skeleton
+            sx={{ bgcolor: 'grey.900' }}
+            variant="rectangular"
+            width={210}
+            height={118}
+            style={{ height: '35rem', width: '100%' }}
+          />
         </>
       )}
     </>

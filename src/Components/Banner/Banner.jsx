@@ -38,7 +38,7 @@ const Banner = () => {
       const request = await axios.get(requests.fetchPopular) // popular movie
       let arr = []
       let p = 0
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < request.data.results.length; i++) {
         let num = Math.floor(Math.random() * request.data.results.length)
         arr.push(request.data.results[num])
       }
@@ -61,7 +61,7 @@ const Banner = () => {
         >
           <div className="banner-content">
             <div className="header">
-              <h1>{movies[index].original_title}</h1>
+              <h1>{movies[index].title}</h1>
             </div>
             <div className="buttons">
               <button className="btn btn-1">
@@ -77,15 +77,15 @@ const Banner = () => {
             </div>
           </div>
           <Button
-              variant="contained"
-              className={'right'}
-              onClick={() => {
-                update(5)
-              }}
-              style={{  background:"rgba(0, 0, 0, 70%)" }}
-            >
-              <ArrowForwardIosIcon />
-            </Button>
+            variant="contained"
+            className={'right'}
+            onClick={() => {
+              update(20)
+            }}
+            style={{ background: 'rgba(0, 0, 0, 70%)' }}
+          >
+            <ArrowForwardIosIcon />
+          </Button>
           <div className="fade"></div>
         </header>
       ) : (

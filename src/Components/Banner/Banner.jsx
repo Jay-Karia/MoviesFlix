@@ -61,7 +61,7 @@ const Banner = () => {
         >
           <div className="banner-content">
             <div className="header">
-              <h1>{movies[index].title}</h1>
+              <h1>{trim(movies[index].title, window.innerWidth < 300 ? 35 : 100)}</h1>
             </div>
             <div className="buttons">
               <button className="btn btn-1">
@@ -73,7 +73,7 @@ const Banner = () => {
               </button>
             </div>
             <div className="description">
-              {trim(movies[index].overview, 200)}
+              {trim(movies[index].overview, window.innerWidth < 500 ? 100 : 200)}
             </div>
           </div>
           <Button
@@ -82,7 +82,7 @@ const Banner = () => {
             onClick={() => {
               update(20)
             }}
-            style={{ background: 'rgba(0, 0, 0, 70%)' }}
+            style={{ background: window.innerWidth < 450 ? 'rgba(0, 0, 0, 40%)' : 'rgba(0, 0, 0, 70%)' }}
           >
             <ArrowForwardIosIcon />
           </Button>

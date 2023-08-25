@@ -45,7 +45,7 @@ const Banner = () => {
       setMovies(arr)
       return request
     }
-    fetchPopular()
+    // fetchPopular()
   }, [])
 
   return (
@@ -94,8 +94,6 @@ const Banner = () => {
           <Skeleton
             sx={{ bgcolor: 'grey.900' }}
             variant="rectangular"
-            width={210}
-            height={118}
             style={{ height: '35rem', width: '100%' }}
           />
         </>

@@ -45,7 +45,7 @@ const Banner = () => {
       setMovies(arr)
       return request
     }
-    // fetchPopular()
+    fetchPopular()
   }, [])
 
   return (

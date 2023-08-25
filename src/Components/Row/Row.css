@@ -7,14 +7,14 @@
 
 .title {
     font-family: "Rubik";
-    padding: 20px 0 20px 0;
+    padding: 20px;
 }
 
 .movies {
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
-    padding: 20px 0 20px 0;
+    padding: 20px;
 }
 
 .movie {
@@ -42,17 +42,33 @@
 .small {
     height: 10rem;
     transition: all 0.25s ease-in;
-    margin: 0 20px 0 0;
+    margin: 0 10px 0 0;
+    width: 15rem;
 }
 
 .large {
     height: 15rem;
-    width: 10%;
-    margin: 0 20px 0 0;
+    margin: 0 10px 0 0;
     transition: all 0.25s ease-in;
     z-index: 1;
 }
 
-.movies::-webkit-scrollbar {
-    display: none;
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(59, 0, 0);
+    border-radius: 20px;
+    border: 3px solid rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+    .movies::-webkit-scrollbar {
+        height: 30px;
+    }
 }

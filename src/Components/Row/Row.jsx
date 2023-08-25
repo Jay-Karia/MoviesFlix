@@ -18,9 +18,6 @@ const Row = ({ title, apiURL, isLarge }) => {
         arr.push(request.data.results[i])
       }
       setMovies(arr)
-      console.log(
-        `url(https://image.tmdb.org/t/p/original/${movies[0].backdrop_path})`,
-      )
       return request
     }
     fetchMovies()
@@ -38,7 +35,17 @@ const Row = ({ title, apiURL, isLarge }) => {
             movies.map((movie) => {
               return (
                 <>
-                  <img key={movie.key} src={isLarge ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} className={"movie" && isLarge ? "large" : "small"} />
+                  <img
+                    key={movie.key}
+                    src={
+                      isLarge
+                        ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
+                        : `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
+                    }
+                    alt={movie.title}
+                    className={`"movie" ${isLarge ? 'large' : 'small'}`}
+                    style={{borderRadius:"4px"}}
+                  />
                 </>
               )
             })
@@ -47,7 +54,7 @@ const Row = ({ title, apiURL, isLarge }) => {
               sx={{ bgcolor: 'grey.900' }}
               variant="rectangular"
               width={'100%'}
-              height={isLarge ? '15rem' : "10rem"}
+              height={isLarge ? '15rem' : '10rem'}
             />
           )}
         </div>

@@ -52,16 +52,21 @@ const Login = () => {
               }}
             >
               <TextField
-                //   className={classes.textField}
                 id="filled-basic"
                 label="Email Address"
                 variant="filled"
                 sx={{
                   background: 'rgba(0, 0, 0, 80%)',
-                  color: 'black',
                   border: '1px solid grey',
                   borderRadius: '7px',
                   width: '40%',
+                  input: { color: 'white', fontFamily: 'Rubik' },
+                  label: {
+                    color: 'white',
+                    fontFamily: 'Rubik',
+                    ':active': { color: 'white' },
+                  },
+                  '& label.Mui-focused': { color: 'white' }
                 }}
               />
               <Button

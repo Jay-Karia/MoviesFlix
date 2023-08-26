@@ -26,31 +26,30 @@
 }
 
 .large:hover {
-    transform: scale(1.08);
+    transform: scale(1.18);
     opacity: 1;
     cursor: pointer;
+    transition: all 0.35s ease-in;
+}
+
+.large {
+    height: 15rem;
+    margin: 0 20px 0 0;
     transition: all 0.25s ease-in;
 }
 
 .small:hover {
-    transform: scale(1.08);
+    transform: scale(1.18);
     opacity: 1;
     cursor: pointer;
     transition: all 0.25s ease-in;
 }
 
 .small {
-    height: 10rem;
+    height: 7rem;
     transition: all 0.25s ease-in;
-    margin: 0 10px 0 0;
+    margin: 0 20px 0 0;
     width: 15rem;
-}
-
-.large {
-    height: 15rem;
-    margin: 0 10px 0 0;
-    transition: all 0.25s ease-in;
-    z-index: 1;
 }
 
 ::-webkit-scrollbar {

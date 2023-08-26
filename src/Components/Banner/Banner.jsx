@@ -73,7 +73,7 @@ const Banner = () => {
               </button>
             </div>
             <div className="description">
-              {trim(movies[index].overview, window.innerWidth < 500 ? 100 : 200)}
+              {trim(movies[index].overview, window.innerWidth < 500 ? 100 : 500)}
             </div>
           </div>
           <Button
@@ -82,7 +82,7 @@ const Banner = () => {
             onClick={() => {
               update(20)
             }}
-            style={{ background: window.innerWidth < 450 ? 'rgba(0, 0, 0, 40%)' : 'rgba(0, 0, 0, 70%)' }}
+            style={{ background: "linear-gradient(0.25turn, transparent,, transparent,  black)", boxShadow:"none" }}
           >
             <ArrowForwardIosIcon />
           </Button>

@@ -82,7 +82,7 @@ const Banner = () => {
             onClick={() => {
               update(20)
             }}
-            style={{ background: "linear-gradient(0.25turn, transparent,, transparent,  black)", boxShadow:"none" }}
+            style={{ background: "linear-gradient(0.25turn, transparent, rgba(0, 0, 0, 60%))", boxShadow:"none" }}
           >
             <ArrowForwardIosIcon />
           </Button>

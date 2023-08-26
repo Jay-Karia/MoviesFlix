@@ -18,15 +18,15 @@ const HomeScreen = () => {
         <Banner/>
 
         {/* Row */}
-        <div className="rows">
-        <Row title="Netflix Originals" apiURL={requests.fetchNetFlixOriginals} isLarge/>
-        <Row title="Trending Movies" apiURL={requests.fetchTrending}/>
-        <Row title="Top Rated Movies" apiURL={requests.fetchTopRated}/>
-        <Row title="Action Movies" apiURL={requests.fetchAction}/>
-        <Row title="Comedy Movies" apiURL={requests.fetchComedy}/>
-        <Row title="Horror Movies" apiURL={requests.fetchHorror}/>
-        <Row title="Romance Movies" apiURL={requests.fetchRomance}/>
-        <Row title="Documentary" apiURL={requests.fetchDocumentary}/>
+        <div className="rows" id='movieRow'>
+        <Row title="Netflix Originals" apiURL={requests.fetchNetFlixOriginals} isLarge key={1}/>
+        <Row title="Trending Movies" apiURL={requests.fetchTrending} key={2}/>
+        <Row key={3} title="Top Rated Movies" apiURL={requests.fetchTopRated}/>
+        <Row key={4} title="Action Movies" apiURL={requests.fetchAction}/>
+        <Row key={5} title="Comedy Movies" apiURL={requests.fetchComedy}/>
+        <Row key={6} title="Horror Movies" apiURL={requests.fetchHorror}/>
+        <Row key={7} title="Romance Movies" apiURL={requests.fetchRomance}/>
+        <Row key={8} title="Documentary" apiURL={requests.fetchDocumentary}/>
         </div>
     </div>
   )

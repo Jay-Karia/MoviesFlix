@@ -36,3 +36,36 @@
 .input {
     color: white;
 }
+
+.start {
+    height: 3rem;
+    width: 10rem;
+}
+
+#filled-basic {
+    width: 25rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .input_box {
+        display: flex;
+        flex-wrap: wrap;
+        height: 150px;
+    }
+    #filled-basic {
+        width: 70vw;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .paragraph h2,
+    .paragraph h3 {
+        font-size: 1em;
+        font-weight: 400;
+        margin: 10px 0 20px 0;
+    }
+    .start {
+        font-size: 0.8rem;
+        width: 9.3rem;
+    }
+}

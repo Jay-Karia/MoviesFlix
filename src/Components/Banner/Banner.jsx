@@ -61,9 +61,7 @@ const Banner = () => {
         >
           <div className="banner-content">
             <div className="header">
-              <h1>
-                {trim(movies[index].title, window.innerWidth < 300 ? 35 : 100)}
-              </h1>
+              <h1>{trim(movies[index].title, window.innerWidth < 300 ? 35 : 100)}</h1>
             </div>
             <div className="buttons">
               <button className="btn btn-1">
@@ -75,10 +73,7 @@ const Banner = () => {
               </button>
             </div>
             <div className="description">
-              {trim(
-                movies[index].overview,
-                window.innerWidth < 500 ? 100 : 500,
-              )}
+              {trim(movies[index].overview, window.innerWidth < 500 ? 100 : 500)}
             </div>
           </div>
           <Button
@@ -87,11 +82,7 @@ const Banner = () => {
             onClick={() => {
               update(20)
             }}
-            style={{
-              background:
-                'linear-gradient(0.25turn, transparent, rgba(0, 0, 0, 60%))',
-              boxShadow: 'none',
-            }}
+            style={{ background: "linear-gradient(0.25turn, transparent, rgba(0, 0, 0, 60%))", boxShadow:"none" }}
           >
             <ArrowForwardIosIcon />
           </Button>

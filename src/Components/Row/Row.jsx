@@ -27,7 +27,7 @@ const Row = ({ title, apiURL, isLarge }) => {
     <>
       <div className="row">
         <div className="title">
-          <h2>{title}</h2>
+          <h6>{title}</h6>
         </div>
 
         <div className="movies">

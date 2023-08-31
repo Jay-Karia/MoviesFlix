@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Navbar from '../Navbar/Navbar'
 
@@ -7,23 +7,11 @@ import './Login.css'
 import TextField from '@mui/material/TextField'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-
-import makeStyles from '@mui/styles/makeStyles'
-
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
-const useStyles = makeStyles((theme) => {
-  textField: {
-    color: 'white'
-  }
-})
-
 const Login = () => {
-  const classes = useStyles()
 
-  useEffect(() => {
-    console.log(classes)
-  }, [])
+  const [signIn, setSignIn] = useState(false)
 
   return (
     <>
@@ -44,11 +32,11 @@ const Login = () => {
               </h3>
             </div>
             <Box
+            className={"input_box"}
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center',
-                flexWrap: 'wrap',
+                alignItems: 'center'
               }}
             >
               <TextField
@@ -59,7 +47,6 @@ const Login = () => {
                   background: 'rgba(0, 0, 0, 80%)',
                   border: '1px solid grey',
                   borderRadius: '7px',
-                  width: '40%',
                   input: { color: 'white', fontFamily: 'Rubik' },
                   label: {
                     color: 'white',
@@ -71,14 +58,13 @@ const Login = () => {
               />
               <Button
                 variant="contained"
+                className={"start"}
                 sx={{
                   background: 'hsl(0, 100%, 35%)',
                   ':hover': {
                     bgcolor: 'hsl(0, 100%, 35%)',
                     color: 'white',
                   },
-                  height: '3rem',
-                  width: '10rem',
                   top: '-1px',
                   marginLeft: '30px',
                 }}

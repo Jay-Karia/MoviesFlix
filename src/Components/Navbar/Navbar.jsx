@@ -23,7 +23,7 @@ const Navbar = ({ btn }) => {
       <div className="nav-contents">
         <img className="logo" src="/netflix.png" alt="logo" />
         {btn ? (
-          <button>Sign Up</button>
+          <button className={"signUp"}>Sign Up</button>
         ) : (
           <img className="avatar" src="/profile.png" alt="avatar" />
         )}

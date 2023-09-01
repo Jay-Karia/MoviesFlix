@@ -9,9 +9,13 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
+import { useNavigate } from 'react-router-dom'
+
 const Login = () => {
 
-  const [signIn, setSignIn] = useState(false)
+  const navigate = useNavigate()
+
+  const [email, setEmail] = useState(null)
 
   return (
     <>
@@ -25,8 +29,8 @@ const Login = () => {
               Unlimited movies, TV Shows and more
             </h1>
             <div className="paragraph" align="center">
-              <h2>Watch anywhere. Cancel anytime</h2>
-              <h3>
+              <h2 className='h2'>Watch anywhere. Cancel anytime</h2>
+              <h3 className='h3'>
                 Ready to Watch? Enter your email to create or restart your
                 membership
               </h3>
@@ -43,6 +47,7 @@ const Login = () => {
                 id="filled-basic"
                 label="Email Address"
                 variant="filled"
+                onChange={(e)=>{setEmail(e.target.value)}}
                 sx={{
                   background: 'rgba(0, 0, 0, 80%)',
                   border: '1px solid grey',
@@ -59,6 +64,7 @@ const Login = () => {
               <Button
                 variant="contained"
                 className={"start"}
+                onClick={()=>{localStorage.setItem("user", email);navigate("/")}}
                 sx={{
                   background: 'hsl(0, 100%, 35%)',
                   ':hover': {

@@ -1,0 +1,71 @@
+.login {
+    background-color: black;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: url("/public/auth_bg.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.contents {
+    z-index: 1;
+    background: linear-gradient( to top, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_box {
+    font-family: "Rubik";
+}
+
+.title {
+    margin: "10px 0 10px 0";
+    font-size: 3rem;
+}
+
+.paragraph .h2,
+.paragraph .h3 {
+    font-size: 1.3em;
+    font-weight: 400;
+    margin: 10px 0 20px 0;
+}
+
+.input {
+    color: white;
+}
+
+.start {
+    height: 3rem;
+    width: 10rem;
+}
+
+#filled-basic {
+    width: 25rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .input_box {
+        display: flex;
+        flex-wrap: wrap;
+        height: 150px;
+    }
+    #filled-basic {
+        width: 70vw;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .paragraph .h2,
+    .paragraph .h3 {
+        font-size: 1em;
+        font-weight: 400;
+        margin: 10px 0 20px 0;
+    }
+    .start {
+        font-size: 0.8rem;
+        width: 9.3rem;
+    }
+}

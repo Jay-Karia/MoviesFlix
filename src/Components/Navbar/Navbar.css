@@ -35,3 +35,16 @@
     width: 30px;
     cursor: pointer;
 }
+
+.signUp {
+    position: fixed;
+    right: 20px;
+    background-color: hsl(0, 100%, 35%);
+    font-family: "Rubik";
+    padding: 10px 10px 10px 10px;
+    color: white;
+    border: none;
+    width: 6rem;
+    top: 15px;
+    cursor: pointer;
+}

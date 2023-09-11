@@ -1,12 +1,13 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react'
 
 import './Row.css'
 
-import requests from '../api/requests'
 import axios from 'axios'
 
 import Skeleton from '@mui/material/Skeleton'
 
+// eslint-disable-next-line react/prop-types
 const Row = ({ title, apiURL, isLarge }) => {
   const [movies, setMovies] = useState([])
 
@@ -21,7 +22,7 @@ const Row = ({ title, apiURL, isLarge }) => {
       return request
     }
     fetchMovies()
-  }, [])
+  }, [apiURL])
 
   return (
     <>
@@ -33,7 +34,7 @@ const Row = ({ title, apiURL, isLarge }) => {
         <div className="movies">
           {movies.length > 0 ? (
             movies.map((movie) => {
-              return (
+                return (
                 <>
                   <img
                     key={movie.key}
@@ -45,6 +46,9 @@ const Row = ({ title, apiURL, isLarge }) => {
                     alt={movie.title}
                     className={`"movie" ${isLarge ? 'large' : 'small'}`}
                     style={{borderRadius:"4px"}}
+                    onClick={()=>{
+                        window.location.replace(`/movie/${movie.id}`)
+                    }}
                   />
                 </>
               )
